@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "chattutor",
+  "version": "${version}",
+  "name": "chatTutor",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/chattutor/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.pepsi.chattutor.client.ChattutorClient"
+    ],
+    "main": [
+      "org.pepsi.chattutor.Chattutor"
+    ]
+  },
+  "mixins": [
+    "chattutor.mixins.json",
+    {
+      "config": "chattutor.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

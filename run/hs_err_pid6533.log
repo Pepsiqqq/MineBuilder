@@ -1,0 +1,277 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007baea1ba03be, pid=6533, tid=6535
+#
+# JRE version: OpenJDK Runtime Environment (23.0) (build 23)
+# Java VM: OpenJDK 64-Bit Server VM (23, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libgallium-24.2.7-arch1.1.so+0x3a03be]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/bin/false" (or dumping to /home/pepsiqqq/IdeaProjects/chatTutor/run/core.6533)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Ddebugger.agent.enable.coroutines=true -Dfabric.dli.config=/home/pepsiqqq/IdeaProjects/chatTutor/.gradle/loom-cache/launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=127.0.0.1:42999 -javaagent:/home/pepsiqqq/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/plugins/java/lib/rt/debugger-agent.jar -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant net.fabricmc.devlaunchinjector.Main
+
+Host: Genuine Intel(R) CPU  @ 2.60GHz, 16 cores, 15G, Arch Linux
+Time: Fri Nov 22 09:30:19 2024 EET elapsed time: 1340.764321 seconds (0d 0h 22m 20s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007baf28025a80):  JavaThread "Render thread"        [_thread_in_native, id=6535, stack(0x00007baf2e900000,0x00007baf2ea00000) (1024K)]
+
+Stack: [0x00007baf2e900000,0x00007baf2ea00000],  sp=0x00007baf2e9fd630,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libgallium-24.2.7-arch1.1.so+0x3a03be]
+C  [libgallium-24.2.7-arch1.1.so+0x3a21e0]
+C  [libgallium-24.2.7-arch1.1.so+0x20e57c]
+C  [libgallium-24.2.7-arch1.1.so+0xe2f61]
+C  [libgallium-24.2.7-arch1.1.so+0xe3616]
+C  [libgallium-24.2.7-arch1.1.so+0xe3d74]
+C  [libgallium-24.2.7-arch1.1.so+0xe46bf]
+J 13155  org.lwjgl.opengl.GL15C.nglBufferData(IJJI)V (0 bytes) @ 0x00007baf185ae86d [0x00007baf185ae7a0+0x00000000000000cd]
+J 28541 c2 net.minecraft.client.gl.VertexBuffer.upload(Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;)V (81 bytes) @ 0x00007baf194d65b4 [0x00007baf194d6340+0x0000000000000274]
+J 25674 c2 net.minecraft.client.render.RenderLayer.draw(Lnet/minecraft/client/render/BufferBuilder;Lcom/mojang/blaze3d/systems/VertexSorter;)V (38 bytes) @ 0x00007baf18fe53c4 [0x00007baf18fe4f40+0x0000000000000484]
+J 25792 c2 net.minecraft.client.render.VertexConsumerProvider$Immediate.draw(Lnet/minecraft/client/render/RenderLayer;)V (65 bytes) @ 0x00007baf19006430 [0x00007baf19006120+0x0000000000000310]
+J 26067 c2 net.minecraft.client.render.VertexConsumerProvider$Immediate.getBuffer(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/VertexConsumer; (103 bytes) @ 0x00007baf1906e198 [0x00007baf1906dec0+0x00000000000002d8]
+J 26597 c2 net.minecraft.client.render.entity.feature.EyesFeatureRenderer.render(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;ILnet/minecraft/entity/Entity;FFFFFF)V (32 bytes) @ 0x00007baf19148da4 [0x00007baf19148d00+0x00000000000000a4]
+J 26398 c2 net.minecraft.client.render.entity.LivingEntityRenderer.render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (626 bytes) @ 0x00007baf190d26c8 [0x00007baf190d1020+0x00000000000016a8]
+J 26345 c2 net.minecraft.client.render.entity.MobEntityRenderer.render(Lnet/minecraft/entity/mob/MobEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (38 bytes) @ 0x00007baf190ba7f4 [0x00007baf190ba7a0+0x0000000000000054]
+J 26404 c2 net.minecraft.client.render.entity.MobEntityRenderer.render(Lnet/minecraft/entity/Entity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (17 bytes) @ 0x00007baf190d95a4 [0x00007baf190d9520+0x0000000000000084]
+J 28332 c2 net.minecraft.client.render.entity.EntityRenderDispatcher.render(Lnet/minecraft/entity/Entity;DDDFFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (387 bytes) @ 0x00007baf19484ed4 [0x00007baf19484780+0x0000000000000754]
+J 29615 c2 net.minecraft.client.render.WorldRenderer.render(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;)V (2751 bytes) @ 0x00007baf18f324b0 [0x00007baf18f30a40+0x0000000000001a70]
+J 26640 c2 net.minecraft.client.render.GameRenderer.renderWorld(FJLnet/minecraft/client/util/math/MatrixStack;)V (641 bytes) @ 0x00007baf191755e8 [0x00007baf19173400+0x00000000000021e8]
+J 29702 c2 net.minecraft.client.render.GameRenderer.render(FJZ)V (991 bytes) @ 0x00007baf18c7a2fc [0x00007baf18c79c00+0x00000000000006fc]
+J 29701 c2 net.minecraft.client.MinecraftClient.render(Z)V (1119 bytes) @ 0x00007baf180900b4 [0x00007baf1808f040+0x0000000000001074]
+J 29765% c2 net.minecraft.client.MinecraftClient.run()V (276 bytes) @ 0x00007baf18016c78 [0x00007baf18016aa0+0x00000000000001d8]
+j  net.minecraft.client.main.Main.main([Ljava/lang/String;)V+1545
+j  java.lang.invoke.LambdaForm$DMH+0x00007baeaf288000.invokeStaticInit(Ljava/lang/Object;Ljava/lang/Object;)V+10 java.base@23
+j  java.lang.invoke.LambdaForm$MH+0x00007baeaf004400.invokeExact_MT(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V+19 java.base@23
+j  net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(Ljava/lang/ClassLoader;)V+74
+j  net.fabricmc.loader.impl.launch.knot.Knot.launch([Ljava/lang/String;Lnet/fabricmc/api/EnvType;)V+40
+j  net.fabricmc.loader.impl.launch.knot.KnotClient.main([Ljava/lang/String;)V+4
+j  java.lang.invoke.LambdaForm$DMH+0x00007baeaf003c00.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;)V+10 java.base@23
+j  java.lang.invoke.LambdaForm$MH+0x00007baeaf004400.invokeExact_MT(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V+19 java.base@23
+j  net.fabricmc.devlaunchinjector.Main.main([Ljava/lang/String;)V+307
+v  ~StubRoutines::call_stub 0x00007baf1785fc86
+V  [libjvm.so+0x76ccb5]
+V  [libjvm.so+0xfadcc9]
+V  [libjvm.so+0x818a51]
+C  [libjli.so+0x5488]
+C  [libjli.so+0x572d]
+C  [libc.so.6+0x9439d]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 13155  org.lwjgl.opengl.GL15C.nglBufferData(IJJI)V (0 bytes) @ 0x00007baf185ae7f2 [0x00007baf185ae7a0+0x0000000000000052]
+J 28541 c2 net.minecraft.client.gl.VertexBuffer.upload(Lnet/minecraft/client/render/BufferBuilder$BuiltBuffer;)V (81 bytes) @ 0x00007baf194d65b4 [0x00007baf194d6340+0x0000000000000274]
+J 25674 c2 net.minecraft.client.render.RenderLayer.draw(Lnet/minecraft/client/render/BufferBuilder;Lcom/mojang/blaze3d/systems/VertexSorter;)V (38 bytes) @ 0x00007baf18fe53c4 [0x00007baf18fe4f40+0x0000000000000484]
+J 25792 c2 net.minecraft.client.render.VertexConsumerProvider$Immediate.draw(Lnet/minecraft/client/render/RenderLayer;)V (65 bytes) @ 0x00007baf19006430 [0x00007baf19006120+0x0000000000000310]
+J 26067 c2 net.minecraft.client.render.VertexConsumerProvider$Immediate.getBuffer(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/VertexConsumer; (103 bytes) @ 0x00007baf1906e198 [0x00007baf1906dec0+0x00000000000002d8]
+J 26597 c2 net.minecraft.client.render.entity.feature.EyesFeatureRenderer.render(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;ILnet/minecraft/entity/Entity;FFFFFF)V (32 bytes) @ 0x00007baf19148da4 [0x00007baf19148d00+0x00000000000000a4]
+J 26398 c2 net.minecraft.client.render.entity.LivingEntityRenderer.render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (626 bytes) @ 0x00007baf190d26c8 [0x00007baf190d1020+0x00000000000016a8]
+J 26345 c2 net.minecraft.client.render.entity.MobEntityRenderer.render(Lnet/minecraft/entity/mob/MobEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (38 bytes) @ 0x00007baf190ba7f4 [0x00007baf190ba7a0+0x0000000000000054]
+J 26404 c2 net.minecraft.client.render.entity.MobEntityRenderer.render(Lnet/minecraft/entity/Entity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (17 bytes) @ 0x00007baf190d95a4 [0x00007baf190d9520+0x0000000000000084]
+J 28332 c2 net.minecraft.client.render.entity.EntityRenderDispatcher.render(Lnet/minecraft/entity/Entity;DDDFFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V (387 bytes) @ 0x00007baf19484ed4 [0x00007baf19484780+0x0000000000000754]
+J 29615 c2 net.minecraft.client.render.WorldRenderer.render(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;)V (2751 bytes) @ 0x00007baf18f324b0 [0x00007baf18f30a40+0x0000000000001a70]
+J 26640 c2 net.minecraft.client.render.GameRenderer.renderWorld(FJLnet/minecraft/client/util/math/MatrixStack;)V (641 bytes) @ 0x00007baf191755e8 [0x00007baf19173400+0x00000000000021e8]
+J 29702 c2 net.minecraft.client.render.GameRenderer.render(FJZ)V (991 bytes) @ 0x00007baf18c7a2fc [0x00007baf18c79c00+0x00000000000006fc]
+J 29701 c2 net.minecraft.client.MinecraftClient.render(Z)V (1119 bytes) @ 0x00007baf180900b4 [0x00007baf1808f040+0x0000000000001074]
+J 29765% c2 net.minecraft.client.MinecraftClient.run()V (276 bytes) @ 0x00007baf18016c78 [0x00007baf18016aa0+0x00000000000001d8]
+j  net.minecraft.client.main.Main.main([Ljava/lang/String;)V+1545
+j  java.lang.invoke.LambdaForm$DMH+0x00007baeaf288000.invokeStaticInit(Ljava/lang/Object;Ljava/lang/Object;)V+10 java.base@23
+j  java.lang.invoke.LambdaForm$MH+0x00007baeaf004400.invokeExact_MT(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V+19 java.base@23
+j  net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(Ljava/lang/ClassLoader;)V+74
+j  net.fabricmc.loader.impl.launch.knot.Knot.launch([Ljava/lang/String;Lnet/fabricmc/api/EnvType;)V+40
+j  net.fabricmc.loader.impl.launch.knot.KnotClient.main([Ljava/lang/String;)V+4
+j  java.lang.invoke.LambdaForm$DMH+0x00007baeaf003c00.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;)V+10 java.base@23
+j  java.lang.invoke.LambdaForm$MH+0x00007baeaf004400.invokeExact_MT(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V+19 java.base@23
+j  net.fabricmc.devlaunchinjector.Main.main([Ljava/lang/String;)V+307
+v  ~StubRoutines::call_stub 0x00007baf1785fc86
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000070
+
+Registers:
+RAX=0x0000000000000002, RBX=0x00007baf2bd884e8, RCX=0x0000000000000000, RDX=0x00007baea30c03a0
+RSP=0x00007baf2e9fd630, RBP=0x00007baf2e9fd6d0, RSI=0x0000000000000001, RDI=0x0000000000000003
+R8 =0x0000000000000000, R9 =0x0000000000000002, R10=0x0000000000000002, R11=0x0000000000000001
+R12=0x00007baf2bd86340, R13=0x0000000000000003, R14=0x0000000000000003, R15=0x00007baf2bd884f4
+RIP=0x00007baea1ba03be, EFLAGS=0x0000000000010213, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000002 is an unknown value
+RBX=0x00007baf2bd884e8 points into unknown readable memory: 0x00000003000301b7 | b7 01 03 00 03 00 00 00
+RCX=0x0 is null
+RDX=0x00007baea30c03a0: <offset 0x00000000018c03a0> in /usr/lib/libgallium-24.2.7-arch1.1.so at 0x00007baea1800000
+RSP=0x00007baf2e9fd630 is pointing into the stack for thread: 0x00007baf28025a80
+RBP=0x00007baf2e9fd6d0 is pointing into the stack for thread: 0x00007baf28025a80
+RSI=0x0000000000000001 is an unknown value
+RDI=0x0000000000000003 is an unknown value
+R8 =0x0 is null
+R9 =0x0000000000000002 is an unknown value
+R10=0x0000000000000002 is an unknown value
+R11=0x0000000000000001 is an unknown value
+R12=0x00007baf2bd86340 points into unknown readable memory: 0x00007baf2be512c0 | c0 12 e5 2b af 7b 00 00
+R13=0x0000000000000003 is an unknown value
+R14=0x0000000000000003 is an unknown value
+R15=0x00007baf2bd884f4 points into unknown readable memory: c8 8c dc c2
+
+Top of Stack: (sp=0x00007baf2e9fd630)
+0x00007baf2e9fd630:   0000000000000000 7e5e39e350cefe00
+0x00007baf2e9fd640:   00007baf2bb42960 00007baf2bb592b0
+0x00007baf2e9fd650:   00007baf2bb42960 00007baf2bb59310
+0x00007baf2e9fd660:   0000000000000000 00007baf2bb42960
+0x00007baf2e9fd670:   00007baf2e9fd7c0 00007baea257c278
+0x00007baf2e9fd680:   000000000000007f 0000000118607fac
+0x00007baf2e9fd690:   00000007159cb538 7e5e39e350cefe00
+0x00007baf2e9fd6a0:   00000080e33bebb4 00007baf2bd884e8
+0x00007baf2e9fd6b0:   0000000000000000 00000000000000ad
+0x00007baf2e9fd6c0:   00007baf2bd884e8 00007baea3d166e0
+0x00007baf2e9fd6d0:   00007baf2e9fd6f0 00007baea1ba21e0
+0x00007baf2e9fd6e0:   0000000000000003 00007baca3f8a080
+0x00007baf2e9fd6f0:   00007baf2e9fd710 00007baea1a0e57c
+0x00007baf2e9fd700:   0000000000000000 00007baf2bd86340
+0x00007baf2e9fd710:   00007baf2e9fd770 00007baea18e2f61
+0x00007baf2e9fd720:   00000000000000f0 01007bac94031ca0
+0x00007baf2e9fd730:   00007baf2bd884d0 00007baf2be512c0
+0x00007baf2e9fd740:   0000000000000000 00007baf2bd86340
+0x00007baf2e9fd750:   00007baf2bd884d0 00007baf2bf2e560
+0x00007baf2e9fd760:   0000000000008892 0000000028025a01
+0x00007baf2e9fd770:   00007baf2e9fd7a0 00007baea18e3616
+0x00007baf2e9fd780:   00007baca3f8a080 00000000e2b4f87c
+0x00007baf2e9fd790:   0000000000002520 00007bae58200c40
+0x00007baf2e9fd7a0:   00007baf2e9fd800 00007baea18e3d74
+0x00007baf2e9fd7b0:   000000000000000b 00007baca3f8a070
+0x00007baf2e9fd7c0:   000088e800000000 00007baf2bd86340
+0x00007baf2e9fd7d0:   0000000000000012 00000000e2b4f87c
+0x00007baf2e9fd7e0:   0000000000000000 000000071764fc70
+0x00007baf2e9fd7f0:   00007baf2e9fd860 00007baf28025a80
+0x00007baf2e9fd800:   00007baf2e9fd820 00007baea18e46bf
+0x00007baf2e9fd810:   00007baea2eed9e5 000000071764fc70
+0x00007baf2e9fd820:   00007baf2e9fd870 00007baf185ae86d 
+
+Instructions: (pc=0x00007baea1ba03be)
+0x00007baea1ba02be:   00 00 41 0f 2e 44 05 00 7a 07 ba 00 00 00 00 74
+0x00007baea1ba02ce:   07 41 8b 93 a0 a1 01 00 41 89 14 04 48 83 c0 04
+0x00007baea1ba02de:   48 39 c1 75 dd e9 ed fb ff ff 41 83 c1 01 44 39
+0x00007baea1ba02ee:   c8 75 f7 e9 ce fc ff ff 66 2e 0f 1f 84 00 00 00
+0x00007baea1ba02fe:   00 00 31 db e9 53 fc ff ff 66 2e 0f 1f 84 00 00
+0x00007baea1ba030e:   00 00 00 66 2e 0f 1f 84 00 00 00 00 00 66 2e 0f
+0x00007baea1ba031e:   1f 84 00 00 00 00 00 66 2e 0f 1f 84 00 00 00 00
+0x00007baea1ba032e:   00 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 80 00 00
+0x00007baea1ba033e:   00 00 f3 0f 1e fa 55 45 89 ca 41 bb 01 00 00 00
+0x00007baea1ba034e:   48 89 e5 41 57 49 89 d7 41 56 41 55 41 89 fd 41
+0x00007baea1ba035e:   54 49 89 cc 53 48 83 ec 78 89 75 bc 4c 89 45 90
+0x00007baea1ba036e:   64 4c 8b 34 25 28 00 00 00 4c 89 75 c8 44 8b 75
+0x00007baea1ba037e:   10 41 83 f9 15 77 1c 44 89 c8 48 8d 15 11 00 52
+0x00007baea1ba038e:   01 41 bb 02 00 00 00 83 3c 82 40 74 06 41 bb 01
+0x00007baea1ba039e:   00 00 00 41 f6 84 24 b4 a1 01 00 08 0f 84 60 02
+0x00007baea1ba03ae:   00 00 41 83 fd ff 0f 84 46 01 00 00 48 8b 4d 90
+0x00007baea1ba03be:   44 39 69 70 0f 8e 38 01 00 00 48 8b 51 78 49 63
+0x00007baea1ba03ce:   c5 48 8b 1c c2 48 8d 43 ff 48 83 f8 fd 0f 87 1f
+0x00007baea1ba03de:   01 00 00 44 2b 6b 60 48 8b 7b 18 44 89 6d c4 8b
+0x00007baea1ba03ee:   43 20 0f b6 57 0d 85 c0 74 0e 8b 4d bc 2b 45 c4
+0x00007baea1ba03fe:   39 c1 0f 4e c1 89 45 bc 41 80 bc 24 ac a5 01 00
+0x00007baea1ba040e:   00 0f 84 13 01 00 00 80 7b 70 00 0f 84 39 06 00
+0x00007baea1ba041e:   00 8b 73 34 85 f6 0f 84 41 01 00 00 8b 45 c4 44
+0x00007baea1ba042e:   89 5d 98 45 31 ed 45 31 f6 4c 89 7d b0 4d 89 ef
+0x00007baea1ba043e:   41 89 d5 41 0f af c3 4c 89 65 a8 45 89 f4 45 89
+0x00007baea1ba044e:   d6 89 45 a0 8d 42 01 d1 e8 89 45 88 66 0f 1f 44
+0x00007baea1ba045e:   00 00 0f b6 57 04 44 89 e8 83 fa 15 77 0f 48 8d
+0x00007baea1ba046e:   35 2d ff 51 01 83 3c 96 10 0f 44 45 88 8b 4d a0
+0x00007baea1ba047e:   4c 89 fa 48 83 ec 08 48 89 de 48 c1 e2 04 48 03
+0x00007baea1ba048e:   53 38 49 83 c7 01 0f af c1 48 8b 52 08 48 8d 3c
+0x00007baea1ba049e:   82 44 89 e0 83 f0 01 0f b6 c0 50 41 56 41 55 44
+0x00007baea1ba04ae:   8b 4d 98 4c 8b 45 b0 8b 4d bc 48 8b 55 a8 e8 bf 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x0 is null
+stack at sp + 1 slots: 0x7e5e39e350cefe00 is an unknown value
+stack at sp + 2 slots: 0x00007baf2bb42960 points into unknown readable memory: 0x00007baf2bb200c0 | c0 00 b2 2b af 7b 00 00
+stack at sp + 3 slots: 0x00007baf2bb592b0 points into unknown readable memory: 0x00007baea26cd4c0 | c0 d4 6c a2 ae 7b 00 00
+stack at sp + 4 slots: 0x00007baf2bb42960 points into unknown readable memory: 0x00007baf2bb200c0 | c0 00 b2 2b af 7b 00 00
+stack at sp + 5 slots: 0x00007baf2bb59310 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+stack at sp + 6 slots: 0x0 is null
+stack at sp + 7 slots: 0x00007baf2bb42960 points into unknown readable memory: 0x00007baf2bb200c0 | c0 00 b2 2b af 7b 00 00
+
+Lock stack of current Java thread (top to bottom):
+
+
+Compiled method (n/a) 1340771 13155     n 0       org.lwjgl.opengl.GL15C::nglBufferData (native)
+ total in heap  [0x00007baf185ae688,0x00007baf185ae970] = 744
+ relocation     [0x00007baf185ae760,0x00007baf185ae798] = 56
+ main code      [0x00007baf185ae7a0,0x00007baf185ae966] = 454
+ stub code      [0x00007baf185ae966,0x00007baf185ae968] = 2
+ oops           [0x00007baf185ae968,0x00007baf185ae970] = 8
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x00007bad74559618} 'nglBufferData' '(IJJI)V' in 'org/lwjgl/opengl/GL15C'
+  # parm0:    rsi       = int
+  # parm1:    rdx:rdx   = long
+  # parm2:    rcx:rcx   = long
+  # parm3:    r8        = int
+  #           [sp+0x50]  (sp of caller)
+  0x00007baf185ae7a0: 6690 448b | 5608 443b 
+
+  0x00007baf185ae7a8: ;   {runtime_call ic_miss_stub}
+  0x00007baf185ae7a8: 5008 0f85 | 30e6 2fff 
+[Verified Entry Point]
+  0x00007baf185ae7b0: 8984 2400 | c0fe ff55 | 488b ec48 | 83ec 4090 | 4181 7f20 | 3500 0000 
+
+  0x00007baf185ae7c8: ;   {runtime_call StubRoutines (final stubs)}
+  0x00007baf185ae7c8: 7405 e871 | 772e ff4d | 8bc8 4c8b | c148 8bca 
+
+  0x00007baf185ae7d8: ;   {oop(a 'java/lang/Class'{0x0000000709da8c38} = 'org/lwjgl/opengl/GL15C')}
+  0x00007baf185ae7d8: 488b d649 | be38 8cda | 0907 0000 | 004c 8974 | 2430 4c8d | 7424 3049 | 8bf6 c5f8 
+
+  0x00007baf185ae7f4: ;   {internal_word}
+  0x00007baf185ae7f4: 7749 baf2 | e75a 18af | 7b00 004d | 8997 a803 | 0000 4989 | a7a0 0300 
+
+  0x00007baf185ae80c: ;   {external_word}
+  0x00007baf185ae80c: 0080 3de0 | b9d6 1700 | 0f84 3c00 | 0000 5652 | 5141 5041 
+
+  0x00007baf185ae820: ;   {metadata({method} {0x00007bad74559618} 'nglBufferData' '(IJJI)V' in 'org/lwjgl/opengl/GL15C')}
+  0x00007baf185ae820: 5148 be18 | 9655 74ad | 7b00 0049 | 8bff 40f6 | c40f 0f84 | 1200 0000 | 4883 ec08 
+
+  0x00007baf185ae83c: ;   {runtime_call}
+  0x00007baf185ae83c: e8ef 4848 | 1748 83c4 | 08e9 0500 
+
+  0x00007baf185ae848: ;   {runtime_call}
+  0x00007baf185ae848: 0000 e8e1 | 4848 1741 | 5941 5859 | 5a5e 498d | bfc0 0300 | 0041 c787 | 4404 0000 | 0400 0000 
+  0x00007baf185ae868: ;   {runtime_call Java_org_lwjgl_opengl_GL15C_nglBufferData__IJJI}
+  0x00007baf185ae868: e8e3 46af | 93c5 f877 | 41c7 8744 | 0400 0005 | 0000 00f0 | 8344 24c0 | 0049 3baf | 4804 0000 
+  0x00007baf185ae888: 0f87 0e00 | 0000 4183 | bf40 0400 | 0000 0f84 | 1c00 0000 | c5f8 7749 | 8bff 4c8b | e448 83ec 
+  0x00007baf185ae8a8: 0048 83e4 
+
+  0x00007baf185ae8ac: ;   {runtime_call}
+  0x00007baf185ae8ac: f0e8 eee0 | fc16 498b | e44d 33e4 | 41c7 8744 | 0400 0008 | 0000 0041 | 83bf c804 | 0000 020f 
+  0x00007baf185ae8cc: 8477 0000 
+
+  0x00007baf185ae8d0: ;   {external_word}
+  0x00007baf185ae8d0: 0080 3d1c | b9d6 1700 | 0f84 2e00 
+
+  0x00007baf185ae8dc: ;   {metadata({method} {0x00007bad74559618} 'nglBufferData' '(IJJI)V' in 'org/lwjgl/opengl/GL15C')}
+  0x00007baf185ae8dc: 0000 48be | 1896 5574 | ad7b 0000 | 498b ff40 | f6c4 0f0f | 8412 0000 | 0048 83ec 
+
+  0x00007baf185ae8f8: ;   {runtime_call}
+  0x00007baf185ae8f8: 08e8 4248 | 4817 4883 | c408 e905 
+
+  0x00007baf185ae904: ;   {runtime_call}
+  0x00007baf185ae904: 0000 00e8 | 3448 4817 | 49c7 87a0 | 0300 0000 | 0000 0049 | c787 a803 | 0000 0000 | 0000 c5f8 
+  0x00007baf185ae924: 7749 8b8f | 3004 0000 | c781 0001 | 0000 0000 | 0000 c949 | 837f 0800 | 0f85 0100 
+
+  0x00007baf185ae940: ;   {runtime_call StubRoutines (initial stubs)}
+  0x00007baf185ae940: 0000 c3e9 | 7812 2bff | c5f8 774c | 8be4 4883 | ec00 4883 
